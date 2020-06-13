@@ -1,14 +1,23 @@
 Feature: Add a project in todoist
 
-  Scenario: Add a project with name
+  Scenario Outline: Can create new projects
 
-  Scenario: Add a project with name and color
+  Given I have to open the browser
+  When I open the todoist website
+  And I login with the <username> and <password>
+  And I can create a new project with the <nameproject> and the <color>
+  Then I can see the created project <nameproject> with the <color> and the list projects
 
-  Scenario: Add to favorite
+  Examples:
+  | username               | password  | nameproject  | color |
+  | jomarnavarro@gmail.com | Test@1234 | testProjectV | Teal  |
+
+
+
 
   #Scenario: Delete project
 
-  Scenario: No possible add project with color fucsia
+  #Scenario: No possible add project with color fucsia
 
 
-  Scenario: Add a project with color rosa mexican
+  #Scenario: Add a project with color rosa mexican
